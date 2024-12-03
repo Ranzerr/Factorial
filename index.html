@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>java</title>
+	<style type="text/css">
+		body{
+			background-color: #232b2b;
+		}
+		.cont{
+			width: 50%;
+			height: 50%;
+			position: relative;
+			left: 25%;
+			align-content: center;
+			background-color:#353839 ;
+			color: white;
+			border: solid 2px gray;
+			padding: 10px;
+			margin-top: 200px;
+			border-radius: 10px;
+			text-align: center;
+		}
+		.cont button{
+			width: 25%;
+			background-color: #414a4c;
+			position: relative;
+			
+			color: white;
+			position: relative;
+
+		}
+		button:hover {
+			opacity: 0.7;
+			
+		}
+		.cont h1{
+
+		}
+
+	</style>
+
+
+</head>
+<body>
+	<div class="cont">
+		<h1>FACTORIAL CALCULATOR</h1>
+		<!-- this button will invoke the function calculate -->
+		<button onclick="calculate()">LET`S CALCULATE</button>
+	</div>
+<script type="text/javascript">
+
+			// this is the function that would be invoked by the button above
+	function calculate() {
+		// while the statement is true this loop will be executed
+		while(true){
+			// the variable choice would be prompted asking for the sentinel value.
+				var choice = prompt("ENTER 'Y' to continue, 'N' to cancel")
+				// if the user inputs "Y" or "y", this if statement would be executed.
+					if (choice == "Y" || choice == "y") {
+						// the program will ask the user for an input strictly for integers only.
+						var n = parseInt(prompt('Enter Number'));	
+						// this while loop is to validate if the user`s input is valid, if not this while loop would be executed.`
+							while (n < 1 || isNaN(n)){
+								// the program would alert that the number that the user input is invalid.
+								alert('Enter Valid Number')
+								// this is to ask again the user to input a valid number.
+								var n = parseInt(prompt('Enter Valid Number'));
+					}
+					// if the user`s input is valid this function will execute.
+					// the the parameter of this function is the variable n.`
+					 function facto(n) {
+					 	// if the n value is 1 this will return one.
+					 	// this is to check the wether the loop will stop or go on
+						if (n == 1 || n == 0) {
+							return 1
+							// if the value of n is above 1 it will return this formula.
+						} else {
+							return n * facto(n-1)	
+						}	
+					}
+					// the program will alert the result of the variable in here
+					alert("The Factorial of " + n +" is "+ facto(n))
+					// if the user inputs "N" or "n", this is where the loop will end
+				}else if(choice == "N" || choice == "n" || isNaN(choice)){
+						// the program will prompt this 
+						alert("THANK YOU FOR USING, PROGRAM TERMINATED")
+						// and will end the loop using break.
+						break;
+					
+				}
+			}
+		}
+		
+
+
+			
+		
+			
+			
+	
+	</script>
+	
+			
+				
+
+</body>
+</html>
